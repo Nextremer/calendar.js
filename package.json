@@ -1,0 +1,45 @@
+{
+  "name": "calendar.js",
+  "version": "0.0.0",
+  "description": "Simple date picker.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "~2.5.1",
+    "browserify": "~3.31.2",
+    "underscore": "~1.5.1",
+    "bower": "~1.2.8",
+    "node-underscorify": "0.0.4"
+  },
+  "devDependencies": {
+    "karma-script-launcher": "~0.1.0",
+    "karma-chrome-launcher": "~0.1.2",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "requirejs": "~2.1.11",
+    "karma-phantomjs-launcher": "~0.1.2",
+    "karma": "~0.10.9",
+    "sinon-chai": "~2.5.0",
+    "chai": "~1.9.0",
+    "sinon": "~1.8.2",
+    "mocha": "~1.17.1",
+    "karma-mocha": "~0.1.1",
+    "browserify-shim": "~3.3.0",
+    "templatify": "0.0.2"
+  },
+  "browser": {
+    "jquery": "./bower_components/jquery/dist/jquery.js"
+  },
+  "browserify-shim": {
+    "jquery": "$"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      "node-underscorify"
+    ]
+  }
+}

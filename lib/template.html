@@ -1,0 +1,31 @@
+<ul>
+  <% _.times(moment().startOf('month').day(), function(_) { %>
+    <li class="day prefill">
+      <input type="radio" value="-" disabled />
+      <label>-</label>
+    </li>
+  <% }) %>
+
+  <% _.times(moment().daysInMonth(), function(day) {
+    day += 1 %>
+    <li class="day">
+      <input id="<%- generateId(day) %>" type="radio"
+             name="<%- name %>" value="<%- day %>" />
+      <label for="<%- generateId(day) %>"><%- day %></label>
+    </li>
+  <% }) %>
+
+  <% _.times(6 - moment().endOf('month').day(), function(_) { %>
+    <li class="day postfill">
+      <input type="radio" value="-" disabled />
+      <label>-</label>
+    </li>
+  <% }) %>
+
+  <% _.each(dates, function(date) { %>
+    <li class="<%- date.className %>">
+      <input type="radio" value="<%- date.value %>" <%- date.disabled ? "disabled" : "" %> />
+      <label><%- date.value %></label>
+    </li>
+  <% }) %>
+</ul>

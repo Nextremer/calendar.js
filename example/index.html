@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <script type="text/javascript" src="../dist/calendar.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        var Calendar = require('calendar.js');
+        var calendar = new Calendar('.calendar');
+      
+        $('form').on('submit', function() {
+          window.alert(calendar.val() + ' is selected.');
+          return false;
+        });
+      });
+    </script>
+  </head>
+  <form method="post" action="#">
+    <div class="calendar"></div>
+    <input type="submit" value="send" />
+  </form>
+</html>
