@@ -1,31 +1,40 @@
+<div class="calendar">
+<div class="header">
+  <h3 class="month"><%- pivot.year() %> / <%- pivot.month() + 1 %></h3>
+  <ul class="arrows">
+    <li class="prev">
+      <a href="#">&#8592;</a>
+    </li>
+    <li class="next">
+      <a href="#">&#8594;</a>
+    </li>
+  </ul>
+</div>
 <ul>
-  <% _.times(moment().startOf('month').day(), function(_) { %>
-    <li class="day prefill">
-      <input type="radio" value="-" disabled />
-      <label>-</label>
-    </li>
-  <% }) %>
-
-  <% _.times(moment().daysInMonth(), function(day) {
-    day += 1 %>
-    <li class="day">
-      <input id="<%- generateId(day) %>" type="radio"
-             name="<%- name %>" value="<%- day %>" />
-      <label for="<%- generateId(day) %>"><%- day %></label>
-    </li>
-  <% }) %>
-
-  <% _.times(6 - moment().endOf('month').day(), function(_) { %>
-    <li class="day postfill">
-      <input type="radio" value="-" disabled />
-      <label>-</label>
-    </li>
-  <% }) %>
-
-  <% _.each(dates, function(date) { %>
-    <li class="<%- date.className %>">
-      <input type="radio" value="<%- date.value %>" <%- date.disabled ? "disabled" : "" %> />
-      <label><%- date.value %></label>
+  <li class="days">
+    <ul>
+      <li class="day sunday">日</li>
+      <li class="day monday">月</li>
+      <li class="day tuesday">火</li>
+      <li class="day wednesday">水</li>
+      <li class="day thursday">木</li>
+      <li class="day friday">金</li>
+      <li class="day suturday">土</li>
+    </ul>
+  </li>
+  <% _.each(weeks, function(week) { %>
+    <li class="week">
+      <ul class="row">
+        <% _.each(week, function(date) { %>
+          <li class="<%- date.className %>">
+            <input id="<%- generateId(date.value) %>" type="radio"
+                   name="<%- name %>" value="<%- date.value %>"
+                   <%- date.disabled ? "disabled" : "" %> />
+            <label for="<%- generateId(date.value) %>"><%- date.value %></label>
+          </li>
+        <% }) %>
+      </ul>
     </li>
   <% }) %>
 </ul>
+</div>

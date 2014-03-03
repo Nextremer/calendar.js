@@ -1,0 +1,49 @@
+.calendar {
+  margin: 5px;
+  text-align: center;
+}
+.calendar .header {
+  position: relative;
+}
+.calendar .arrows a {
+  font-weight: bold;
+  text-decoration: none;
+}
+.calendar .arrows .prev {
+  position: absolute;
+  left: 10%;
+  top: 0;
+}
+.calendar .arrows .next {
+  position: absolute;
+  right: 10%;
+  top: 0;
+}
+.calendar ul,
+.calendar li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.calendar .month {
+  font-size: 1em;
+  text-align: center;
+  margin: 5px 0;
+}
+.calendar .week .date,
+.calendar .days .day {
+  width: 30px;
+  display: inline-block;
+  text-align: center;
+  padding: 3px .5px;
+}
+.calendar .week .date label {
+  display: inline-block;
+  width: 100%;
+}
+.calendar .week .date [type=radio] {
+  display: none;
+}
+.calendar .week .date [type=radio]:checked + label {
+  background: skyblue;
+}
