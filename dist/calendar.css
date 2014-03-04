@@ -41,9 +41,9 @@
   display: inline-block;
   width: 100%;
 }
-.calendar .week .date [type=radio] {
+.calendar .week .date [type=checkbox] {
   display: none;
 }
-.calendar .week .date [type=radio]:checked + label {
+.calendar .week .date [type=checkbox]:checked + label {
   background: skyblue;
 }

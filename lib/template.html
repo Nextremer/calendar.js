@@ -30,7 +30,7 @@
               <input <% if (!date.disabled) { %>
                      id="<%- generateId(date.label) %>"
                      <% } %>
-          type="radio"
+          type="checkbox"
           name="<%- name %>" value="<%- date.value %>"
           <%- date.disabled ? "disabled" : "" %> />
               <label <% if (!date.disabled) { %>

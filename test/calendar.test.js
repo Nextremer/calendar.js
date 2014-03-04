@@ -30,7 +30,7 @@ describe('Calendar', function() {
     });
 
     it('should render calendar in `el`', function() {
-      expect($('#test input[type=radio]')).to.have.length.above(0);
+      expect($('#test input[type=checkbox]')).to.have.length.above(0);
     });
 
     describe('without month option', function() {
