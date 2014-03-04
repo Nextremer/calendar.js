@@ -27,10 +27,16 @@
       <ul class="row">
         <% _.each(week, function(date) { %>
           <li class="<%- date.className %>">
-            <input id="<%- generateId(date.value) %>" type="radio"
+            <input <% if (!date.disabled) { %>
+                   id="<%- generateId(date.label) %>"
+                   <% } %>
+                   type="radio"
                    name="<%- name %>" value="<%- date.value %>"
                    <%- date.disabled ? "disabled" : "" %> />
-            <label for="<%- generateId(date.value) %>"><%- date.value %></label>
+            <label <% if (!date.disabled) { %>
+                   for="<%- generateId(date.label) %>"
+                   <% } %>
+                   ><%- date.label %></label>
           </li>
         <% }) %>
       </ul>

@@ -14,7 +14,8 @@
     "underscore": "~1.5.1",
     "bower": "~1.2.8",
     "node-underscorify": "0.0.4",
-    "less": "~1.7.0"
+    "less": "~1.7.0",
+    "inherits": "~2.0.1"
   },
   "devDependencies": {
     "karma-script-launcher": "~0.1.0",
