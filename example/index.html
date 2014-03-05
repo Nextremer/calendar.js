@@ -8,7 +8,8 @@
     <script type="text/javascript">
       $(function() {
         var Calendar = require('calendar.js');
-        var calendar = new Calendar('.calendar');
+        var today = new Date();
+        var calendar = new Calendar('.calendar', { selectableRange: { sinceDate: today } });
       
         $('form').on('submit', function() {
           window.alert(calendar.val() + ' is selected.');
